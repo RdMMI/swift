@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftRenduDesignSystem
 
 struct ContentView: View {
     @State private var searchText = ""
@@ -30,16 +31,16 @@ struct ContentView: View {
                 if isLoading {
                     ProgressView("Chargement...")
                 } else if errorMessage != nil {
-                    ContentUnavailableView(
-                        "Service indisponnible",
-                        systemImage: "xmark.icloud.fill",
-                        description: Text("Reessayer plus tard")
+                    ErrorComponent(
+                        errorMessage: "Service unavailable",
+                        errorDescription: "the service is currently unavailable",
+                        errorIcon: "xmark.icloud.fill"
                     )
                 } else if results.isEmpty {
-                    ContentUnavailableView(
-                        "Aucun résultat",
-                        systemImage: "magnifyingglass",
-                        description: Text("Essayez une autre recherche")
+                    ErrorComponent(
+                        errorMessage: "Nothing found",
+                        errorDescription: "Try a different search",
+                        errorIcon: "magnifyingglass"
                     )
                 } else {
                     List(results, id: \.properties.name) { feature in
@@ -53,8 +54,8 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("Recherche de lieux")
-            .searchable(text: $searchText, prompt: "Chercher un lieu")
+            .navigationTitle("Search for places")
+            .searchable(text: $searchText, prompt: "Search for a location")
             .onSubmit(of: .search) {
                 performSearch()
             }
