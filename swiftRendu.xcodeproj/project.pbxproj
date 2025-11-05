@@ -6,13 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3E8BF00E2EBB4B05006513D2 /* SwiftRenduDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 3E8BF00D2EBB4B05006513D2 /* SwiftRenduDesignSystem */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		3E8BEFD32EBB4344006513D2 /* swiftRendu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftRendu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3E8BF0112EBB4B35006513D2 /* Exceptions for "swiftRendu" folder in "swiftRendu" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Packages/Users/rd253570/Desktop/swiftRendu/swiftRendu/Packages/SwiftRenduDesignSystem,
+			);
+			target = 3E8BEFD22EBB4344006513D2 /* swiftRendu */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3E8BEFD52EBB4344006513D2 /* swiftRendu */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3E8BF0112EBB4B35006513D2 /* Exceptions for "swiftRendu" folder in "swiftRendu" target */,
+			);
 			path = swiftRendu;
 			sourceTree = "<group>";
 		};
@@ -23,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E8BF00E2EBB4B05006513D2 /* SwiftRenduDesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +83,7 @@
 			);
 			name = swiftRendu;
 			packageProductDependencies = (
+				3E8BF00D2EBB4B05006513D2 /* SwiftRenduDesignSystem */,
 			);
 			productName = swiftRendu;
 			productReference = 3E8BEFD32EBB4344006513D2 /* swiftRendu.app */;
@@ -94,6 +113,9 @@
 			);
 			mainGroup = 3E8BEFCA2EBB4344006513D2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3E8BF00C2EBB4B05006513D2 /* XCLocalSwiftPackageReference "../SwiftRenduDesignSystem" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3E8BEFD42EBB4344006513D2 /* Products */;
 			projectDirPath = "";
@@ -159,6 +181,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -220,6 +243,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -341,6 +365,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		3E8BF00C2EBB4B05006513D2 /* XCLocalSwiftPackageReference "../SwiftRenduDesignSystem" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SwiftRenduDesignSystem;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3E8BF00D2EBB4B05006513D2 /* SwiftRenduDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftRenduDesignSystem;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3E8BEFCB2EBB4344006513D2 /* Project object */;
 }
