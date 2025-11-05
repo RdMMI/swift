@@ -14,22 +14,9 @@
 		3E8BEFD32EBB4344006513D2 /* swiftRendu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftRendu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3E8BF0112EBB4B35006513D2 /* Exceptions for "swiftRendu" folder in "swiftRendu" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Packages/Users/rd253570/Desktop/swiftRendu/swiftRendu/Packages/SwiftRenduDesignSystem,
-			);
-			target = 3E8BEFD22EBB4344006513D2 /* swiftRendu */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3E8BEFD52EBB4344006513D2 /* swiftRendu */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				3E8BF0112EBB4B35006513D2 /* Exceptions for "swiftRendu" folder in "swiftRendu" target */,
-			);
 			path = swiftRendu;
 			sourceTree = "<group>";
 		};
