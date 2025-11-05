@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct PropertiesModel: Codable {
-    let city: String
     let country: String
     let name: String
+    let state: String
+    let city: String?
 }
 
 struct GeometryModel: Codable {
-    let coordinates: Array<Float>
+    let coordinates: Array<Double>
     let type: String
 }
 
