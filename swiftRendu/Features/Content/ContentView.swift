@@ -3,25 +3,39 @@ import SwiftRenduDesignSystem
 
 struct ContentView: View {
     @State private var searchText = ""
-    let geocodeurService = GeocodeurService()
     @State private var results: [FeatureModel] = []
     @State private var errorMessage: String?
     @State private var isLoading = false
+    @State private var searchTask: Task<Void, Never>?
+    let geocodeurService = GeocodeurService()
     
     private func performSearch() {
-        guard !searchText.isEmpty else { return }
+        
+        searchTask?.cancel()
+        
+        guard !searchText.isEmpty && searchText.count>=3 else {
+            results = []
+            errorMessage = nil
+            isLoading = false
+            return
+        }
         
         isLoading = true
         errorMessage = nil
         
-        Task {
+        searchTask = Task {
             do {
+                try await Task.sleep(for: .milliseconds(300))
                 let data = try await geocodeurService.fetchGeocodeur(query: searchText)
                 results = data.features
+                isLoading = false
             } catch {
-                errorMessage = error.localizedDescription
+                guard error is CancellationError else {
+                    errorMessage = error.localizedDescription
+                    isLoading = false
+                    return
+                }
             }
-            isLoading = false
         }
     }
     
@@ -29,7 +43,7 @@ struct ContentView: View {
         NavigationStack {
             VStack {
                 if isLoading {
-                    ProgressView("Chargement...")
+                    LoadingComponent()
                 } else if errorMessage != nil {
                     ErrorComponent(
                         errorMessage: "Service unavailable",
@@ -43,7 +57,7 @@ struct ContentView: View {
                         errorIcon: "magnifyingglass"
                     )
                 } else {
-                    List(results, id: \.properties.name) { feature in
+                    List(results) { feature in
                         VStack(alignment: .leading) {
                             Text(feature.properties.name)
                                 .font(.headline)
@@ -56,10 +70,7 @@ struct ContentView: View {
             }
             .navigationTitle("Search for places")
             .searchable(text: $searchText, prompt: "Search for a location")
-            .onSubmit(of: .search) {
-                performSearch()
-            }
-            .task {
+            .onChange(of: searchText) {oldValue, newValue in
                 performSearch()
             }
         }

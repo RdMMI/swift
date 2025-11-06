@@ -19,9 +19,15 @@ struct GeometryModel: Codable {
     let type: String
 }
 
-struct FeatureModel: Codable {
+struct FeatureModel: Codable, Identifiable {
+    let id: UUID = UUID()
     let geometry: GeometryModel
     let properties: PropertiesModel
+    
+    enum CodingKeys: String, CodingKey {
+        case geometry
+        case properties
+    }
 }
 
 struct GeocodeurModel: Codable {
