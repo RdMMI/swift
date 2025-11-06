@@ -66,12 +66,19 @@ struct ContentView: View {
                     )
                 } else {
                     List(results) { feature in
-                        VStack(alignment: .leading) {
-                            Text(feature.properties.name)
-                                .font(.headline)
-                            Text("\(feature.properties.state), \(feature.properties.country)")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
+                        NavigationLink(destination: MeteoView(
+                            latitude: .constant(feature.geometry.coordinates[1]),
+                            longitude: .constant(feature.geometry.coordinates[0]),
+                            city: .constant(feature.properties.name)
+                        )) {
+                            VStack(alignment: .leading) {
+                                Text(feature.properties.name)
+                                    .font(.headline)
+                                
+                                Text("\(feature.properties.state), \(feature.properties.country)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                            }
                         }
                     }
                 }

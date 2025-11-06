@@ -7,24 +7,25 @@
 
 import SwiftUI
 
+@Observable
 public class GeocodeurService {
-    let baseurl: String
+    let baseUrl: String
     let limit: Int?
     let lang: String?
     let query: String = "?q="
     
     init(
-        baseurl: String = "https://photon.komoot.io/api/",
+        baseUrl: String = "https://photon.komoot.io/api/",
         limit: Int? = nil,
         lang: String? = nil
     ) {
-        self.baseurl = baseurl
+        self.baseUrl = baseUrl
         self.limit = limit
         self.lang = lang
     }
     
     func queryBuilder(query: String) -> String {
-        var url = baseurl + self.query + query
+        var url = baseUrl + self.query + query
         if (limit != nil) {
             url += "&limit=\(limit!)"
         }
