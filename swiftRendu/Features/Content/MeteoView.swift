@@ -29,10 +29,11 @@ struct MeteoView: View {
         }
         isLoading = false
     }
+
     
     var body: some View {
         ZStack {
-            Image("evening")
+            Image(results?.getWeatherBackground() ?? "day" )
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
@@ -42,7 +43,7 @@ struct MeteoView: View {
                     Spacer()
                     DegretComponent(temperature: "\(results.current.temperature_2m)\(results.current_units.temperature_2m)")
                     CityNameComponent(city: city)
-                    ImageMeteoComponent(meteo:"rain")
+                    ImageMeteoComponent(meteo: results.getWeatherIcon())
                         .padding(.bottom, 150)
                     Spacer()
                     HStack {

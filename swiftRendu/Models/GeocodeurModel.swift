@@ -10,7 +10,7 @@ import SwiftUI
 struct PropertiesModel: Codable {
     let country: String
     let name: String
-    let state: String
+    let state: String?
     let city: String?
 }
 
