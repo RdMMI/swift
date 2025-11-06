@@ -7,7 +7,7 @@
 
 import SwiftUI
   
-public struct ImageMeteo: View {
+public struct ImageMeteoComponent: View {
     let meteo: String
     
     public init(meteo: String) {
@@ -16,13 +16,11 @@ public struct ImageMeteo: View {
     
     public var body: some View {
         VStack {
-//            Spacer()
             HStack {
                 Spacer()
-                Image("soleil")
+                Image("lune")
                     .resizable()
-                    .frame(width: 75, height: 75)
-                    
+                    .frame(width: 75, height: 75)  
             }
         }
         .padding(.bottom, 25)
@@ -31,5 +29,5 @@ public struct ImageMeteo: View {
 }
 
 #Preview {
-    ImageMeteo(meteo: "Monday")
+    ImageMeteoComponent(meteo: "Monday")
 }

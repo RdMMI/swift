@@ -17,11 +17,10 @@ import SwiftUI
         public var body: some View {
             Text(temperature)
                 .font(.system(size: 86, weight: .bold))
-                .foregroundColor(Color.DS.blanc)
-                
+                .foregroundColor(Color.DS.white)
         }
     }
 
 #Preview {
     DegretComponent(temperature: "32°C")
-    }
+}

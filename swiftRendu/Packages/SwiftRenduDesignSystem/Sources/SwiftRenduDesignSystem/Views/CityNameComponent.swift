@@ -7,7 +7,7 @@
 
 import SwiftUI
   
-    public struct NomVilleComponent: View {
+    public struct CityNameComponent: View {
         let city: String
         
         public init(city: String) {
@@ -17,11 +17,10 @@ import SwiftUI
         public var body: some View {
             Text(city)
                 .font(.system(size: 32, weight: .bold))
-                .foregroundColor(Color.DS.blanc)
-                
+                .foregroundColor(Color.DS.white)
         }
     }
 
 #Preview {
-    NomVilleComponent(city: "Parrrris")
+    CityNameComponent(city: "Parrrris")
     }

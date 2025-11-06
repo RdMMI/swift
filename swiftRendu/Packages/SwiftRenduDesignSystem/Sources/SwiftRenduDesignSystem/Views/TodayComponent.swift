@@ -16,11 +16,10 @@ public struct TodayComponent: View {
     
     public var body: some View {
         VStack {
-//            Spacer()
             HStack {
                 Text(today)
                     .font(.system(size: 32, weight: .bold))
-                    .foregroundColor(Color.DS.blanc)
+                    .foregroundColor(Color.DS.white)
                 Spacer()
             }
         }

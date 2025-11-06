@@ -10,21 +10,19 @@ import SwiftRenduDesignSystem
 struct ContentView: View {
     var body: some View {
         ZStack {
-            Image("soiree")
+            Image("jours")
                             .resizable()
                             .scaledToFill()
                             .ignoresSafeArea()
             VStack {
-//                NavbarComponent()
-//                CardComponent()
                 Spacer()
                 DegretComponent(temperature: "32°C")
-                NomVilleComponent(city: "Paris")
+                CityNameComponent(city: "Paris")
                     .padding(.bottom, 300)
                 Spacer()
                 HStack {
                     TodayComponent(today:"Monday")
-                    ImageMeteo(meteo:"Monday")
+                    ImageMeteoComponent(meteo:"Monday")
                 }
                 
                 
