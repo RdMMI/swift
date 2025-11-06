@@ -18,7 +18,7 @@ struct HomeView: View {
                     .transition(.move(edge: .bottom))
             } else {
                 ZStack {
-                    Image("foret")
+                    Image("forest")
                         .resizable()
                         .scaledToFill()
                         .ignoresSafeArea()
@@ -29,18 +29,18 @@ struct HomeView: View {
                             .frame(width: 400, height: 400)
                             .padding(.bottom, -100)
                         AppNameComponent(appname: "BREF METEO")
-                            .padding(.bottom, 190)
+                            .padding(.bottom, 200)
                         Spacer()
                     }
                     ZStack {
-                        Image("foret2")
+                        Image("forestFrontPlan")
                             .resizable()
                             .scaledToFill()
                             .ignoresSafeArea()
                     }
                     HStack {
                         TextComponent(text: "Press anywhere")
-                            .padding(.top, 820)
+                            .padding(.top, 780)
                     }
                 }
                 .transition(.move(edge: .top))

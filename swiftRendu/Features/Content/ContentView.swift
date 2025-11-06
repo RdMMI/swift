@@ -52,13 +52,7 @@ struct ContentView: View {
             VStack {
                 if isLoading {
                     LoadingComponent()
-                } else if errorMessage != nil {
-                    ErrorComponent(
-                        errorMessage: "Service unavailable",
-                        errorDescription: "the service is currently unavailable",
-                        errorIcon: "xmark.icloud.fill"
-                    )
-                } else if results.isEmpty {
+                } else if results.isEmpty || errorMessage != nil {
                     ErrorComponent(
                         errorMessage: "Nothing found",
                         errorDescription: "Try a different search",
@@ -66,12 +60,19 @@ struct ContentView: View {
                     )
                 } else {
                     List(results) { feature in
-                        VStack(alignment: .leading) {
-                            Text(feature.properties.name)
-                                .font(.headline)
-                            Text("\(feature.properties.state), \(feature.properties.country)")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
+                        NavigationLink(destination: MeteoView(
+                            latitude: .constant(feature.geometry.coordinates[1]),
+                            longitude: .constant(feature.geometry.coordinates[0]),
+                            city: .constant(feature.properties.name)
+                        )) {
+                            VStack(alignment: .leading) {
+                                Text(feature.properties.name)
+                                    .font(.headline)
+                                
+                                Text(feature.properties.state != nil ? "\(feature.properties.state!), \(feature.properties.country)" : feature.properties.country)
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                            }
                         }
                     }
                 }

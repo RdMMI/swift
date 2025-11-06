@@ -28,6 +28,6 @@ public struct ImageMeteoComponent: View {
 }
 
 #Preview {
-    ImageMeteoComponent(meteo: "lune")
+    ImageMeteoComponent(meteo: "moon")
         .background(Color.gray.opacity(0.9))
 }
