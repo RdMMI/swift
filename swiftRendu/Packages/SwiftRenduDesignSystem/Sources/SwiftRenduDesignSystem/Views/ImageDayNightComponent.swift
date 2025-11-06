@@ -1,5 +1,5 @@
 //
-//  ImageMeteoComponent.swift
+//  ImageMeteo.swift
 //  SwiftRenduDesignSystem
 //
 //  Created by DAGUET Romain on 06/11/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
   
-public struct ImageMeteoComponent: View {
+public struct ImageDayNightComponent: View {
     let meteo: String
     
     public init(meteo: String) {
@@ -20,14 +20,14 @@ public struct ImageMeteoComponent: View {
                 Spacer()
                 Image(meteo)
                     .resizable()
-                    .frame(width: 200, height: 200)
-                Spacer()
+                    .frame(width: 75, height: 75)  
             }
         }
+        .padding(.bottom, 25)
+        .padding(.horizontal, 20)
     }
 }
 
 #Preview {
-    ImageMeteoComponent(meteo: "moon")
-        .background(Color.gray.opacity(0.9))
+    ImageDayNightComponent(meteo: "lune")
 }

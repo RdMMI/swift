@@ -42,13 +42,14 @@ struct MeteoView: View {
                     Spacer()
                     DegretComponent(temperature: "\(results.current.temperature_2m)\(results.current_units.temperature_2m)")
                     CityNameComponent(city: city)
-                        .padding(.bottom, 300)
+                    ImageMeteoComponent(meteo:"rain")
+                        .padding(.bottom, 150)
                     Spacer()
                     HStack {
                         TodayComponent(today: results.current.time.toDay() ?? "")
                             .frame(maxWidth: .infinity)
                             .layoutPriority(1)
-                        ImageMeteoComponent(meteo: results.current.is_day == 1 ? "sun" : "moon")
+                        ImageDayNightComponent(meteo: results.current.is_day == 1 ? "sun" : "moon")
                             .frame(maxWidth: .infinity)
                             .layoutPriority(0.25)
                     }
