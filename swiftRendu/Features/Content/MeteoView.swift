@@ -1,13 +1,14 @@
 //
-//  ContentView.swift
+//  MeteoView.swift
 //  swiftRendu
 //
-//  Created by DAGUET Romain on 05/11/2025.
+//  Created by DAGUET Romain on 06/11/2025.
 //
+
 import SwiftUI
 import SwiftRenduDesignSystem
 
-struct ContentView: View {
+struct MeteoView: View {
     var body: some View {
         ZStack {
             Image("soiree")
@@ -35,5 +36,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MeteoView()
 }
