@@ -19,14 +19,16 @@ struct MeteoView: View {
                 Spacer()
                 DegretComponent(temperature: "32°C")
                 CityNameComponent(city: "Paris")
-                    .padding(.bottom, 300)
+//                    .padding(.bottom, 10)
+                ImageMeteoComponent(meteo:"pluit")
+                    .padding(.bottom, 150)
                 Spacer()
                 HStack(spacing: 0) {
                     TodayComponent(today:"Monfdddddddday")
                         .frame(maxWidth: .infinity)
                         .layoutPriority(1)
                     
-                    ImageMeteoComponent(meteo:"soleil")
+                    ImageDayNightComponent(meteo:"soleil")
                         .frame(maxWidth: .infinity)
                         .layoutPriority(0.25)
                 }
