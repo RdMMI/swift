@@ -21,9 +21,14 @@ struct MeteoView: View {
                 CityNameComponent(city: "Paris")
                     .padding(.bottom, 300)
                 Spacer()
-                HStack {
-                    TodayComponent(today:"Monday")
-                    ImageMeteoComponent(meteo:"Monday")
+                HStack(spacing: 0) {
+                    TodayComponent(today:"Monfdddddddday")
+                        .frame(maxWidth: .infinity)
+                        .layoutPriority(1)
+                    
+                    ImageMeteoComponent(meteo:"soleil")
+                        .frame(maxWidth: .infinity)
+                        .layoutPriority(0.25)
                 }
             }
             .padding()
