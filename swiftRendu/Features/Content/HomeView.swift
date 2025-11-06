@@ -18,7 +18,7 @@ struct HomeView: View {
                     .transition(.move(edge: .bottom))
             } else {
                 ZStack {
-                    Image("foret")
+                    Image("forest")
                         .resizable()
                         .scaledToFill()
                         .ignoresSafeArea()
@@ -33,7 +33,7 @@ struct HomeView: View {
                         Spacer()
                     }
                     ZStack {
-                        Image("foret2")
+                        Image("forestFrontPlan")
                             .resizable()
                             .scaledToFill()
                             .ignoresSafeArea()

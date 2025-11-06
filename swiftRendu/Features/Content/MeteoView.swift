@@ -48,7 +48,7 @@ struct MeteoView: View {
                         TodayComponent(today: results.current.time.toDay() ?? "")
                             .frame(maxWidth: .infinity)
                             .layoutPriority(1)
-                        ImageMeteoComponent(meteo:"moon")
+                        ImageMeteoComponent(meteo: results.current.is_day == 1 ? "sun" : "moon")
                             .frame(maxWidth: .infinity)
                             .layoutPriority(0.25)
                     }
@@ -68,8 +68,8 @@ struct MeteoView: View {
 
 #Preview {
     MeteoView(
-        latitude: .constant(38.1614),
-        longitude: .constant(7.9053),
-        city: .constant("Cuba")
+        latitude: .constant(48.8126688),
+        longitude: .constant(2.2385432),
+        city: .constant("paris")
     )
 }
