@@ -32,7 +32,7 @@ struct MeteoView: View {
     
     var body: some View {
         ZStack {
-            Image("soiree")
+            Image("evening")
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
@@ -46,7 +46,11 @@ struct MeteoView: View {
                     Spacer()
                     HStack {
                         TodayComponent(today: results.current.time.toDay() ?? "")
-                        ImageMeteoComponent(meteo:"Monday")
+                            .frame(maxWidth: .infinity)
+                            .layoutPriority(1)
+                        ImageMeteoComponent(meteo:"moon")
+                            .frame(maxWidth: .infinity)
+                            .layoutPriority(0.25)
                     }
                 }
                 .padding()

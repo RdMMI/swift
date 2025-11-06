@@ -18,7 +18,7 @@ public struct ImageMeteoComponent: View {
         VStack {
             HStack {
                 Spacer()
-                Image("lune")
+                Image(meteo)
                     .resizable()
                     .frame(width: 75, height: 75)  
             }
@@ -29,5 +29,5 @@ public struct ImageMeteoComponent: View {
 }
 
 #Preview {
-    ImageMeteoComponent(meteo: "Monday")
+    ImageMeteoComponent(meteo: "moon")
 }
